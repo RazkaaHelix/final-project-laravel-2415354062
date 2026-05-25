@@ -42,7 +42,7 @@ class SubscriptionController extends Controller
     public function store(Request $request): JsonResponse
     {
         $data = $request->validate([
-            'customer_id' => ['required', 'integer', 'exists:customers,id'],
+            'customer_id' => ['required', 'integer', 'exists:costumers,id'],
             'service_id'  => ['required', 'integer', 'exists:services,id'],
             'start_date'  => ['nullable', 'date'],
             'end_date'    => ['nullable', 'date', 'after_or_equal:start_date'],
@@ -91,7 +91,7 @@ class SubscriptionController extends Controller
         }
 
         $data = $request->validate([
-            'customer_id' => ['sometimes', 'integer', 'exists:customers,id'],
+            'customer_id' => ['sometimes', 'integer', 'exists:costumers,id'],
             'service_id'  => ['sometimes', 'integer', 'exists:services,id'],
             'start_date'  => ['nullable', 'date'],
             'end_date'    => ['nullable', 'date', 'after_or_equal:start_date'],

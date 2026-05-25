@@ -19,6 +19,7 @@ class Subscription extends Model
         ];
     }
 
+
     public function customer(): BelongsTo
     {
         return $this->belongsTo(Customer::class);
